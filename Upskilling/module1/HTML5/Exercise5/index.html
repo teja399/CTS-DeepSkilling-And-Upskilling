@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 450px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px lightgray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        output {
+            display: block;
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function showConfirmation() {
+            document.getElementById("message").value =
+                "Registration Successful!";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Community Event Registration</h2>
+
+        <form onsubmit="event.preventDefault(); showConfirmation();">
+
+            <label>Full Name</label>
+            <input type="text"
+                   placeholder="Enter your full name"
+                   required
+                   autofocus>
+
+            <label>Email</label>
+            <input type="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label>Event Date</label>
+            <input type="date"
+                   required>
+
+            <label>Event Type</label>
+
+            <select required>
+                <option value="">Select Event</option>
+                <option>Workshop</option>
+                <option>Seminar</option>
+                <option>Music Festival</option>
+                <option>Sports Event</option>
+            </select>
+
+            <label>Message</label>
+
+            <textarea
+                rows="4"
+                placeholder="Enter your message">
+            </textarea>
+
+            <button type="submit">
+                Register
+            </button>
+
+            <output id="message"></output>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
